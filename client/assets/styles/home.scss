@@ -1,0 +1,37 @@
+body, html {
+  width: 100%;
+}
+
+body {
+  font-family: OpenSans;
+}
+
+.main-header {
+  background-image: url('../images/animals.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 385px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(#000, 0.5);
+    z-index: 0;
+  }
+}
+
+#leftNavOpen {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 1;
+  font-size: 20pt;
+  color: #fff;
+}

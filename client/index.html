@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animals</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/all.min.css">
+</head>
+<body ng-app="app">
+
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+      <!-- START directive  -->
+      <div class="off-canvas position-left" id="navBar" data-off-canvas>
+        <ul class="vertical menu" data-drilldown>
+          <li>
+            <a>Cats</a>
+          </li>
+          <li>
+            <a>Dogs</a>
+          </li>
+          <li>
+            <a>Horses</a>
+          </li>
+          <li>
+            <a>Contsct Us</a>
+          </li>
+        </ul>
+      </div>
+      <!-- END directive -->
+
+      <!-- MAIN content -->
+      <div class="off-canvas-content" data-off-canvas-content>
+        <header class="main-header">
+          <a id="leftNavOpen" data-open="navBar">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </a>
+
+        </header>
+
+        <p>content goes here...</p>
+
+      </div>
+      <!-- MAIN content end -->
+    </div>
+  </div>
+
+  <!-- LOAD scripts -->
+
+  <script src='js/main.min.js'></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "animals",
+  "version": "1.0.0",
+  "description": "Test app",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "foundation-sites": "^6.2.3",
+    "mongoose": "^4.5.10"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-if": "^2.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaLukianov/animals.git"
+  },
+  "author": "Dmytro Lukianov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaLukianov/animals/issues"
+  },
+  "homepage": "https://github.com/DimaLukianov/animals#readme"
+}
