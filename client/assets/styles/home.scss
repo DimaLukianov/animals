@@ -4,6 +4,18 @@ body, html {
 
 body {
   font-family: OpenSans;
+  color: $nav-bar-bg-color;
+}
+
+.button {
+  background-color: $nav-bar-bg-color;
+  color: $nav-item-color;
+  &:hover, &:active, &:focus, &:focus:active {
+    background-color: lighten($nav-bar-bg-color, 10%);
+  }
+  &:visited {
+    background-color: $nav-bar-bg-color;
+  }
 }
 
 .main-header {
@@ -12,8 +24,14 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 385px;
+  height: 450px;
   position: relative;
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    height: 350px;
+  }
+  @media screen and (max-width: 39.9375em) {
+    height: 250px;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -34,4 +52,76 @@ body {
   z-index: 1;
   font-size: 20pt;
   color: #fff;
+}
+
+#navBar {
+  height: 100%;
+  background-color: $nav-bar-bg-color;
+  box-shadow: none;
+  .vertical.menu {
+    a {
+      font-family: OpenSansSemibold;
+      padding: 15px 20px;
+      color: $nav-item-color;
+      &:hover {
+        background-color: lighten($nav-bar-bg-color, 10%);
+      }
+      &.active {
+        background-color: lighten($nav-bar-bg-color, 15%);
+      }
+    }
+  }
+}
+
+#headerNavBar {
+  & > .row {
+    max-width: 100vw;
+  }
+  .nav-item {
+    a {
+      width: 100%;
+      font-family: OpenSansSemibold;
+      display: inline-block;
+      padding: 20px;
+      text-transform: uppercase;
+      color: $nav-bar-bg-color;
+      border-bottom: 1px solid transparent;
+      &:hover {
+        border-bottom: 1px solid $nav-bar-bg-color;
+      }
+      &.active {
+        background-color: $nav-bar-bg-color;
+        color: $nav-item-color;
+      }
+    }
+  }
+}
+
+.main-footer {
+  background-color: $nav-bar-bg-color;
+  padding: 20px 0;
+  .copyright {
+    color: $nav-item-color;
+    font-size: 16pt;
+    @media screen and (max-width: 39.9375em) {
+      text-align: center;
+    }
+  }
+  .help.button {
+    background-color: $nav-item-color;
+    color: $nav-bar-bg-color;
+    margin-bottom: 0;
+  }
+  .help-cont {
+    text-align: right;
+    @media screen and (max-width: 39.9375em) {
+      text-align: center;
+    }
+  }
+}
+
+#helpModal {
+  .button {
+    width: 120px;
+  }
 }
