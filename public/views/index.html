@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animals</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/all.min.css">
+</head>
+<body ng-app="app">
+
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+      <!-- START directive  -->
+      <left-nav-bar></left-nav-bar>
+      <!-- END directive -->
+
+      <!-- MAIN content -->
+      <div class="off-canvas-content" data-off-canvas-content>
+        <header>
+          <div class="main-header">
+            <a id="leftNavOpen" data-toggle="navBar">
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+          </div>
+          <nav id="headerNavBar">
+            <div class="row">
+              <div class="small-12 medium-3 text-center columns nav-item">
+                <a ng-class="currentPath == '/cats' || currentPath == '/' ? 'active' : ''" ng-href="#/cats">Cats</a>
+              </div>
+              <div class="small-12 medium-3 text-center columns nav-item">
+                <a ng-class="currentPath == '/dogs' ? 'active' : ''" ng-href="#/dogs">Dogs</a>
+              </div>
+              <div class="small-12 medium-3 text-center columns nav-item">
+                <a ng-class="currentPath == '/horses' ? 'active' : ''" ng-href="#/horses">Horses</a>
+              </div>
+              <div class="small-12 medium-3 text-center columns nav-item">
+                <a ng-class="currentPath == '/contact_us' ? 'active' : ''" class="" ng-href="#/contact_us">Contact Us</a>
+              </div>
+            </div>
+
+          </nav>
+        </header>
+
+        <div ng-view>Loadnig...</div>
+
+        <footer>
+          <div class="main-footer">
+            <div class="row align-middle">
+              <div class="small-12 medium-8 large-6 columns copyright">
+                Animals 2016 &copy;
+              </div>
+              <div class="small-12 medium-4 large-6 columns help-cont">
+                <a class="help button" data-open="helpModal">Help</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Help modal -->
+        <div class="reveal" id="helpModal" data-reveal>
+          <h3>Help!</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur assumenda, tempore quas? Quo eum obcaecati labore tempore. Debitis ea tenetur qui praesentium vel sed, reiciendis voluptatibus perferendis asperiores, laboriosam veniam.</p>
+
+          <div class="row">
+            <div class="small-12 medium-6 columns text-center">
+              <a href="https://www.google.com.ua" target="_blank" class="button" data-close>Yes</a>
+            </div>
+            <div class="small-12 medium-6 columns text-center">
+              <a id="helpCancel" class="button" data-close>No</a>
+            </div>
+          </div>
+
+          <!-- <button class="close-button" data-close aria-label="Close reveal" type="button">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button> -->
+        </div>
+
+      </div>
+      <!-- MAIN content end -->
+    </div>
+  </div>
+
+  <!-- LOAD scripts -->
+
+  <script src='js/main.min.js'></script>
+</body>
+</html>

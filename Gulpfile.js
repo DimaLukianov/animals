@@ -58,14 +58,23 @@ gulp.task('browserify', function() {
       .pipe(debug({ title: 'FINISHED browserify ->' }));
 });
 
+gulp.task('clean-index', function() {
+  return del('public/index.html');
+});
+
+gulp.task('copy-index', ['clean-index'], function() {
+  gulp.src(['client/index.html'])
+      .pipe(gulp.dest('public'));
+});
+
 gulp.task('clean-views', function() {
-  return del(['public/index.html', 'public/views']);
+  return del(['public/views']);
 });
 
 
 gulp.task('views', ['clean-views'], function() {
-  gulp.src(['client/index.html', 'client/views'])
-      .pipe(gulp.dest('public'));
+  gulp.src(['client/index.html', 'client/views/**/*.html'])
+      .pipe(gulp.dest('public/views'));
 });
 
 gulp.task('clean-fonts', function() {
@@ -90,16 +99,32 @@ gulp.task('images', ['clean-images'], function() {
 gulp.task('server', function () {
   nodemon({
     script: 'server.js',
-    watch: ['client/*.js', 'client/assets/scripts/**/*.js'],
-    tasks: ['lint', 'browserify']  })
+    watch: ['client/*.js',
+            'client/assets/js/**/*.js',
+            'client/controllers/**/*.js',
+            'client/directives/**/*.js'],
+    tasks: ['lint', 'browserify']  });
 })
 
 //Watch task
 gulp.task('watch',function() {
   gulp.watch('client/assets/styles/**/*.scss',['styles']);
-  gulp.watch(['client/index.html', 'client/views/**/*.html'],['views']);
+  gulp.watch(['client/views/**/*.html'],['views']);
+  gulp.watch(['client/index.html'],['copy-index']);
   gulp.watch(['client/assets/fonts/**/*.*'],['fonts']);
   gulp.watch(['client/assets/images/**/*.*'],['images']);
 });
 
-gulp.task('default', ['views', 'fonts', 'images', 'styles', 'lint', 'browserify', 'watch', 'server']);
+gulp.task('default',
+  [
+    'copy-index',
+    'views',
+    'fonts',
+    'images',
+    'styles',
+    'lint',
+    'browserify',
+    'watch',
+    'server'
+  ]
+);

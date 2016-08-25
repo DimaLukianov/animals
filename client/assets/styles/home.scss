@@ -86,6 +86,7 @@ body {
       text-transform: uppercase;
       color: $nav-bar-bg-color;
       border-bottom: 1px solid transparent;
+      transition: 0.5s;
       &:hover {
         border-bottom: 1px solid $nav-bar-bg-color;
       }

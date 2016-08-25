@@ -14,22 +14,7 @@
     <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
       <!-- START directive  -->
-      <div class="off-canvas position-left" id="navBar" data-off-canvas>
-        <ul class="vertical menu" data-drilldown>
-          <li>
-            <a>Cats</a>
-          </li>
-          <li>
-            <a class='active'>Dogs</a>
-          </li>
-          <li>
-            <a>Horses</a>
-          </li>
-          <li>
-            <a>Contsct Us</a>
-          </li>
-        </ul>
-      </div>
+      <left-nav-bar></left-nav-bar>
       <!-- END directive -->
 
       <!-- MAIN content -->
@@ -43,23 +28,23 @@
           <nav id="headerNavBar">
             <div class="row">
               <div class="small-12 medium-3 text-center columns nav-item">
-                <a class="">Cats</a>
+                <a ng-class="currentPath == '/cats' || currentPath == '/' ? 'active' : ''" ng-href="#/cats">Cats</a>
               </div>
               <div class="small-12 medium-3 text-center columns nav-item">
-                <a class="active">Dogs</a>
+                <a ng-class="currentPath == '/dogs' ? 'active' : ''" ng-href="#/dogs">Dogs</a>
               </div>
               <div class="small-12 medium-3 text-center columns nav-item">
-                <a class="">Horses</a>
+                <a ng-class="currentPath == '/horses' ? 'active' : ''" ng-href="#/horses">Horses</a>
               </div>
               <div class="small-12 medium-3 text-center columns nav-item">
-                <a class="">Contact Us</a>
+                <a ng-class="currentPath == '/contact_us' ? 'active' : ''" class="" ng-href="#/contact_us">Contact Us</a>
               </div>
             </div>
 
           </nav>
         </header>
 
-        <p>content goes here...</p>
+        <div ng-view>Loadnig...</div>
 
         <footer>
           <div class="main-footer">
@@ -81,10 +66,10 @@
 
           <div class="row">
             <div class="small-12 medium-6 columns text-center">
-              <a class="button">Yes</a>
+              <a href="https://www.google.com.ua" target="_blank" class="button" data-close>Yes</a>
             </div>
             <div class="small-12 medium-6 columns text-center">
-              <a class="button" data-close>No</a>
+              <a id="helpCancel" class="button" data-close>No</a>
             </div>
           </div>
 

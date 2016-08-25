@@ -1,0 +1,16 @@
+<div class="off-canvas position-left" id="navBar" data-off-canvas>
+  <ul class="vertical menu" data-drilldown>
+    <li>
+      <a ng-class="currentPath == '/cats' || currentPath == '/' ? 'active' : ''" ng-href="#/cats" data-close="navBar">Cats</a>
+    </li>
+    <li>
+      <a ng-class="currentPath == '/dogs' ? 'active' : ''" ng-href="#/dogs" data-close="navBar">Dogs</a>
+    </li>
+    <li>
+      <a ng-class="currentPath == '/horses' ? 'active' : ''" ng-href="#/horses" data-close="navBar">Horses</a>
+    </li>
+    <li>
+      <a ng-class="currentPath == '/contact_us' ? 'active' : ''" ng-href="#/contact_us" data-close="navBar">Contsct Us</a>
+    </li>
+  </ul>
+</div>
