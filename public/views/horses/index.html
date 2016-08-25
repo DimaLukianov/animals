@@ -1,3 +1,16 @@
-<div>
-  HORSES list...
+<div ng-repeat="animal in animals">
+  <div class="row align-middle animal">
+    <div class="small-12 medium-3 columns">
+      <img class="animal-img" src="{{animal.image_url}}" alt="{{animal.name}}">
+    </div>
+    <div class="small-12 medium-6">
+      <h4 class="animal-name" ng-bind="animal.name"></h4>
+      <p class="animal-descr" ng-bind="animal.description"></p>
+    </div>
+    <div class="small-12 medium-3 text-right animal-properties">
+      <p>Breed: <b ng-bind="animal.breed"></b></p>
+      <p>Weight: <b ng-bind="animal.weight + ' kg'"></b></p>
+      <p>Color: <b ng-bind="animal.color"></b></p>
+    </div>
+  </div>
 </div>

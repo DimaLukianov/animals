@@ -1,0 +1,16 @@
+.animal {
+  margin-bottom: 20px;
+  .animal-img {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+  }
+  .animal-descr {
+    text-align: justify;
+  }
+  .animal-properties {
+    @media screen and (max-width: 39.9375em) {
+      text-align: center;
+    }
+  }
+}
