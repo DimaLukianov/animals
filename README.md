@@ -14,4 +14,4 @@ Visit [localhost:3000](http://localhost:3000/).
 
 
 *Author:*
-** Dmytro Lukianov **
+**Dmytro Lukianov**
